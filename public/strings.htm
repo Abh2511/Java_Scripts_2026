@@ -1,0 +1,101 @@
+<!-- <script>
+      var link  = '<a href = "home.html">home</a>';
+      document.write(link);
+</script> -->
+
+<!-- <script>
+      var username = prompt("Enter The Name");
+      var age = parseInt(prompt("Enter Age"));
+      var msg1 = "Hello !" + " "+ " " + username + " you will be " + (age+1) + "next year.";
+      var msg2 = 'Hello ! ${username} you will be ${age+1} next year.<br>';
+      var msg3 = 'Hello ! ${username} you will be ${age+1} next year.';
+      document.write(msg1);
+      document.write(msg2);
+      document.write(msg3);
+</script> -->
+<!-- 
+<script>
+      var title = prompt("Enter Title");
+      var loginName = prompt("Enter Login Name" ,"UserName , Email, Date");
+      var loginType = prompt("Enter Login Type", "Text|Email|Date");
+      var login = `
+          <h2>${title}</h2>
+          <dl>
+              <dt>${loginName}</dt>
+              <dd><input type = ${loginType}></dd>
+           </dl>
+           <button>Login</button>
+      `;
+      document.write(login);
+</script> -->
+
+<!-- <script>
+      var title = prompt("Enter Title");
+      var loginName = prompt("Enter Login Name" ,"UserName , Email, Date");
+      var loginType = prompt("Enter Login Type", "Text|Email|Date");
+      var login = `
+          <form>
+            <h2>${title}</h2>
+          <dl>
+              <dt>${loginName}</dt>
+              <dd><input type = ${loginType}></dd>
+           </dl>
+           <button>Login</button>
+          </form>
+      `;
+      document.write(login);
+</script> -->
+
+<!-- <script>
+      var path = "\"D:\\tax2.jpeg";
+      document.write(path);
+</script> -->
+ 
+
+<!-- <script>
+      alert("Hello\vWelcome");
+</script>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>String</title>
+      <script>
+            function RegisterClick(){
+                  var username = document.getElementById("UserName").value;
+
+                  var UserError = document.getElementById("UserError");
+
+                  if(username=="")
+            {
+                 // UserError.innerHTML = "User Name Required".fontcolor('orange').fontsize(3).bold().italics() ;
+                    userError.innerHTML = "User Name Required";
+                    userError.className = "error-style";
+            }
+            else{
+                  document.write("Registered");
+            }
+            }
+            function ChangeCase(){
+                  var ifsc = document.getElementById("ifsc").value;
+                  document.getElementById("ifsc").value = ifsc.toUpperCase();
+
+                  var userName = document.getElementById("UserName").value;
+                  document.getElementById("UserName").value = userName.toUpperCase();
+            }
+
+      </script>
+</head>
+<body>
+      <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" onkeyup="ChangeCase()" size="6" id="UserName"></dd>
+            <dd id ="UserError"></dd>
+            <dt>IFSC Code</dt>
+            <dd><input type="text" onkeyup="ChangeCase()" size="6" id="ifsc"></dd>            
+      </dl>
+      <button onclick="RegisterClick()">Register</button>
+</body>
+</html>

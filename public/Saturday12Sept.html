@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration</title>
+
+    <style>
+        .error-style {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success-style {
+            color: green;
+            font-weight: bold;
+        }
+        span{
+            color:cadetblue;
+            font-size:18px;
+            padding: 20px;
+            
+        }
+    </style>
+
+    <script>
+
+        function RegisterClick() {
+
+            var fullName = document.getElementById("FullName").value;
+
+            var nameError = document.getElementById("NameError");
+
+            if (fullName == "") {
+
+                nameError.innerHTML = "Full Name Required";
+                nameError.className = "error-style";
+
+            }
+            else {
+
+                nameError.innerHTML = "Registration Successful";
+                nameError.className = "success-style";
+            }
+        }
+
+
+        function ChangeCase() {
+
+            var fullName = document.getElementById("FullName").value;
+
+            document.getElementById("FullName").value =
+                fullName.toUpperCase();
+
+
+            var panNumber = document.getElementById("PanNumber").value;
+
+            document.getElementById("PanNumber").value =
+                panNumber.toUpperCase();
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <dl>
+
+        <dt>Full Name</dt>
+        <span>As Mention in the Addhar Card</span>
+        <dd>
+            <input
+                type="text"
+                id="FullName"
+                onkeyup="ChangeCase()">
+        </dd>
+
+        <dd id="NameError"></dd>
+
+
+        <dt>PAN Number</dt>
+
+        <dd>
+            <input
+                type="text"
+                id="PanNumber"
+                onkeyup="ChangeCase()">
+        </dd>
+
+    </dl>
+
+    <button onclick="RegisterClick()">
+        Register
+    </button>
+
+</body>
+
+</html>
