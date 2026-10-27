@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="4">
+    <title>Document</title>
+    <style>
+        .topic 
+        {
+            width: 200px;
+            box-shadow: 2px 2px 2px black;
+            padding: 5px;
+            margin: 10px;
+        }
+        .container {
+            display: flex;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            margin-right: 100px;
+        }
+        .topic:target {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function FetchClick()
+        {
+            var topic = " ";
+            var now = new Date()
+            switch(location.hash){
+                case "#html":
+                topic += "HTML Tutorial - " + now.toLocaleTimeString() + "<br>";
+                break;
+                case "#js":
+                topic += "JavaScript Basics - " + now.toLocaleTimeString() + "<br>";
+                break;
+                case "#css":
+                topic +="CSS Examples - " + now.toLocaleTimeString() + "<br>";
+                break;
+                case "#jq":
+                topic += "JQuery Library - " + now.toLocaleTimeString()+ "<br>";
+                break;
+            }
+            document.getElementById("topics").innerHTML += topic;
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#html">HTML</a></li>
+         <li><a href="#css">CSS</a></li>
+          <li><a href="#js">JavaScript</a></li>
+           <li><a href="#jq">jQuery</a></li> 
+    </ul>
+    <div class="container">
+    <div class="topic" id="html">
+        <h2>HTML</h2>
+        <p>It is markup language</p>
+    </div>
+    <div class="topic" id="css">
+        <h2>CSS</h2>
+        <p>It is define styles for HTML language</p>
+    </div>
+</body>
+<div class="topic" id="js">
+    <h2>JavaScript</h2>
+    <p>It is define logic for html language</p>
+</div>
+<div class="topic" id="jq">
+    <h2>JavaScript</h2>
+    <p>It is define JS Library for the JS</p>
+</div>
+</div>
+<p>
+    <h3>Recently Viewed <button onclick="FetchClick()">Fetch</button><button onclick="location.reload()">reload</button></h3>
+    <p id="topics"></p>
+</p>
+</body>
+</body>
+
+</html>

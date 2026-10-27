@@ -1,0 +1,16 @@
+<script>
+    function findTrangleType(side1,side2,side3)
+    {
+        if(side1==side2 && side1==side3)
+    {
+        document.write("The triangle is equilateral Triangle");
+    }
+    else if (side1==side2 || side2 == side3 || side1==side3){
+
+        document.write("The triangle is Isosceles triangle");
+    } else {
+        document.write("Scalene Triangle");
+    }
+    }
+    findTrangleType(5,4,3);
+</script>

@@ -1,0 +1,6 @@
+CI and CD are two most frequently used terms in modern development practises and DevOps practises.
+
+=> CI stands for Continuous Integration. It is fundamental DevOps best practise where developers frequently merge code changes to central repository where automated builds and tests runs.
+
+=> CD means Continuous Delivery or Continous Deployment.
+

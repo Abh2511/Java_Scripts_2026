@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+    </style>
+    <script>
+        var timer;
+        function FetchClick()
+        {
+            document.getElementById("buttonContainer").style.display = "none";
+            document.getElementById("statusContainer").style.display = "block";
+            timer =  setInterval(SetCount,100);
+
+        }
+        var count = 0;
+        function SetCount(){
+            count++;
+            document.getElementById("progress").value = count;
+            document.getElementById("count").innerHTML = `${count} % completed `;
+            if(count==100){
+                document.getElementById("statusContainer").style.display ="none";
+                document.getElementById("imageContainer").style.display = "block";
+            }
+
+        }
+        function PauseClick(){
+            clearInterval(timer);
+             document.getElementById("count").innerHTML = `${count} % Paused `;
+        }
+        function ResumeClick(){
+            timer = setInterval(SetCount,100);
+            document.getElementById("count").innerHTML = `${count} % Completed `;
+        }
+    </script>
+</head> 
+<body onload="bodyload()">
+    <div>
+        <div id="buttonContainer">
+        <button onclick="FetchClick()" class="btn btn-primary">Fetch Image</button>
+    </div>
+    <div id="statusContainer" style="display: none;">
+        <!-- <span class="spinner-border"></span>
+        <div>Loading... -->
+        <progress id="progress" min="1" max="100" value="1"></progress>
+        <p id="count"></p>
+        <p>
+            <button onclick="ResumeClick()">></button>
+            <button onclick="PauseClick()">||</button>
+        </p>
+        
+    </div>
+    </div>
+     <div id="imageContainer" style="display: none;">
+        <img src="../images/m3.jpg" width="300" height="300">
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyUserId(userid)
+        {
+            var userError = document.getElementById("userError");
+            fetch("../data/users.json")
+            .then((res)=> {
+                return res.json();
+            })
+            .then (users=>{
+                for(var user of users)
+            {
+                if(user.UserId==userid)
+                {
+                    userError.innerHTML = "User Id Taken - Try Another".fontcolor(`red`);
+                    break;
+                } else {
+                    userError.innerHTML = "User Id Available ".fontcolor(`green`);
+                }
+            }
+            })
+        }
+        function VerifyCaps()
+        {
+            var password = document.getElementById("password").value;
+            var pwdError = document.getElementById("pwdError");
+
+             
+         }
+    </script>
+</head>
+<body>
+    <dl>
+        <h3>Register User</h3>
+        <dt>User ID</dt>
+        <dd><input type="text"  onkeypress="VerifyUserId(this.value)" id="UserId"></dd>
+        <dd id="userError"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" onkeypress="VerifyCaps()"></dd>
+        <dd id="pwdError" style="color: goldenrod; display: none;">
+            Warning : Caps is ON
+        </dd>
+    </dl>
+</body>
+</html>

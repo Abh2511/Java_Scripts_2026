@@ -1,0 +1,17 @@
+<script>
+    var data = new Map();
+    data.set(1,"Samsung TV");
+    data.set("Html","IT is a Markup Language");
+    data.delete(1);
+    if(data.has(1)){
+        document.write(data.get(1))
+    }
+    else{
+        document.write(`There is no key by name 1<br>`)
+    }
+    // document.write(data.get("Html"));
+    document.write(`Total Number of Keys :${data.size}<br>`);
+    for(var item of data.entries()){
+        document.write(item+ "<br>");
+    }
+</script>

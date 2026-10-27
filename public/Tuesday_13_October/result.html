@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <script>
+
+         var topics = [
+            {Title:"HTML",Content:["HTML Semantics","HTML Images","HTML List"]},
+            {Title:"JavaScript",Content:["Variables","DataTypes","Primitive"]}
+         ];
+
+        function bodyload()
+        {
+            var queryString = location.search;
+            var searchString = queryString.substring(queryString.indexOf("=")+1);
+            topics.map(topic=>{
+                if(topic.Title==searchString)
+            {
+                topic.Content.map(item=>{
+                    var li = document.createElement("li");
+                    li.innerHTML = item;
+                    document.querySelector("ol").appendChild(li);
+                })
+            }
+            })
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h3>Results</h3>
+    <ol>
+
+    </ol>
+</body>
+</html>

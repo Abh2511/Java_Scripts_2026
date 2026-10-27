@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data = [
+            {Category : "Electronics" ,Products:["Televisions","Mobiles"]},
+            {Category : "Footwear" ,Products:["Casuals","Daily"]},
+        ]; 
+
+        // function bodyload(){
+        //     for(var item of data){
+        //         var li = document.createElement("li");
+        //         li.innerHTML = item.Category;
+
+        //         var optgroup = document.createElement("optgroup");
+        //         optgroup.label = item.Category;
+        //         for(var product of item.Products){
+        //             var ul = document.createElement("ul");
+        //             var ulLi = document.createElement("li");
+        //             ulLi.innerHTML= product;
+        //             ul.appendChild(ulLi);
+        //             li.appendChild(ul);
+
+        //             var option = document.createElement("option");
+        //             option.text = product;
+        //             option.value = product;
+        //             optgroup.appendChild(option);
+
+        //         }
+        //         document.querySelector("ol").appendChild(li);
+        //         document.querySelector("select").appendChild(optgroup);
+        //     }
+        // }
+
+        // function bodyload(){
+        //     for(var item of data)
+        // {
+        //     var details = document.createElement("details");
+        //     var summary = document.createElement("summary");
+        //     summary.innerHTML = item.Category;
+        //     details.appendChild(summary);
+        //     for(var product of item.Products){
+        //         var div = document.createElement("div");
+        //         div.innerHTML = product;
+        //         div.style.marginBottom = "20px";
+        //         details.appendChild(div);
+        //     }
+        //     document.getElementById("menu").appendChild(details);
+        // }
+        // }
+
+        var data = [
+            {Topic:"JavaScript", Description:"JavaScript is a oop language"},
+            {Topic:"HTML", Description:"It is a markup langauge."},
+        ]
+        function bodyload(){
+            for(var item of data){
+                var dt = document.createElement("dt");
+                var dd = document.createElement("dd");
+                dt.innerHTML = item.Topic;
+                dd.innerHTML = itm.Description;
+                document.querySelector("dl").appendChild(dt);
+                document.querySelector("dl").appendChild(dd);
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <dl>
+
+    </dl>
+</body>
+</html>

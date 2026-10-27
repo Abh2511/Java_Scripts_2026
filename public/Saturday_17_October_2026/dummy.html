@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Slide Show</title>
+
+    <link rel="stylesheet"
+        href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet"
+        href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script>
+        var count = 0;
+        var timer;
+
+        function GetProduct() {
+            count++;
+
+            if (count > 194) {
+                count = 1;
+            }
+
+            fetch(`https://dummyjson.com/products/${count}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Unable to fetch product");
+                    }
+
+                    return response.json();
+                })
+                .then(product => {
+                    document.getElementById("title").innerHTML =
+                        product.title;
+
+                    document.getElementById("pic").src =
+                        product.thumbnail;
+
+                    document.getElementById("status").innerHTML =
+                        `${count} / 194`;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        function bodyload() {
+            GetProduct();
+        }
+
+        function PlayClick() {
+            if (timer) {
+                return;
+            }
+
+            timer = setInterval(GetProduct, 3000);
+        }
+
+        function PauseClick() {
+            clearInterval(timer);
+            timer = null;
+        }
+    </script>
+
+</head>
+
+<body onload="bodyload()"
+    class="container-fluid d-flex justify-content-center">
+
+    <div class="mt-2 card w-50">
+
+        <div class="card-header text-center">
+            <p id="title"></p>
+            <p id="status"></p>
+        </div>
+
+        <div class="card-body">
+            <img id="pic"
+                width="100%"
+                height="300px"
+                style="object-fit: contain;"
+                alt="Product Image">
+        </div>
+
+        <div class="card-footer text-center">
+
+            <button onclick="PlayClick()"
+                class="btn btn-primary">
+                <span class="bi bi-play-fill"></span>
+            </button>
+
+            <button onclick="PauseClick()"
+                class="btn btn-danger">
+                <span class="bi bi-pause-fill"></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

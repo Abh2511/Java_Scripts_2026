@@ -1,0 +1,17 @@
+<script>
+    var FetchData = new Promise((resolve, reject) =>
+     {
+        var url = prompt("Enter URL");
+        if (url == "http://google.com/products") {
+            resolve('Fetched Data Successfully .. ');
+        } else {
+            reject('Unable to fetch data');
+        }
+
+        });
+    FetchData.then((msg) => {
+        document.write(`Success: ${ msg }`);
+    }).catch((msg) => {
+        document.write(`Failure: ${ msg }`);
+    })
+</script>

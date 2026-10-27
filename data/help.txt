@@ -1,0 +1,3 @@
+Ajx Help
+-Asynchronous JS and XML.
+-XML HttpReqiust Object for Ajax.

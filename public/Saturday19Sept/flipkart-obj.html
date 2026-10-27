@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function bodyload()
+        {
+            fetch("../data/flipkart.json")
+            .then(function(response){
+                return response.json(); 
+            })
+            .then(function(product){
+                document.getElementById("productImage").src=product.photo;
+                document.getElementById("productTitle").innerHTML = product.title;
+                document.getElementById("productRating").innerHTML= product.rating.rate;
+                document.getElementById("productReviews").innerHTML = `${product.rating.ratings} Ratings & ${product.rating.reviews} Reviews`.fontcolor('gray').bold();
+
+             })
+        }
+    </script> 
+</head>
+ <body class="container-fluid" onload="bodyload()">
+    <section class="row mt-4">
+        <div class="col-3">
+            <img width="300" height="400" id="productImage">
+        
+        </div>
+        <div class="col-9">
+            <h3 id="title"></h3>
+            <div class="bg-success text-white p-2 rounded" style="width:60px">
+               <span id="productRating"></span>  <span class="bi bi-star-fill"></span>
+            </div>
+            <div>
+                <span id="productReviews"></span>
+            </div>
+            <div>
+                <h1 id="productPrice"></h1>
+            </div>
+            <div>
+                <h3>Offers</h3>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+ </body>
+ </html>

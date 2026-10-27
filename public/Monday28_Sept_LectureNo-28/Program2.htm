@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categoryName = " ";
+        function SubmitClick(){
+            var categoryCheckBoxes = document.getElementsByName("Category");
+           // alert(categoryCheckBoxes.length);
+           for(var checkbox of categoryCheckBoxes){
+            if(checkbox.checked){
+                categoryName += checkbox.value;
+ 
+            }
+           }
+           document.querySelector("p").innerHTML = categoryName;
+        }
+    </script>
+</head>
+<body>
+    <h3>Categories</h3>
+    <ul style="list-style:none;">
+        <li><input type="checkbox" name="Category" value="Electronics">Electronics</li>
+        <li><input type="checkbox" name="Category" value="Footwear">Footwear</li>
+        <li><input type="checkbox" name="Category" value="Kids Fashion">Kids Fashion</li>
+        <li><input type="checkbox" name="Category" value="Jewelery">Jewelery</li>
+    </ul>
+    <button onclick="SubmitClick()">Submit</button>
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    ```
+    <title>Stack Visualizer - DSA</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <style>
+        body {
+            background-color: #f1f5f9;
+        }
+
+        .stack-box {
+            min-height: 280px;
+            border: 3px dashed #adb5bd;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stack-item {
+            width: 180px;
+            padding: 12px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            background-color: #0d6efd;
+            color: white;
+            animation: appear 0.25s ease-in-out;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    ```
+
+</head>
+
+<body>
+
+    ```
+    <div class="container py-5">
+
+        <!-- Page heading -->
+        <div class="text-center mb-4">
+            <h1 class="text-primary fw-bold">Stack Visualizer</h1>
+            <p class="text-muted">
+                Learn Data Structures and Algorithms using JavaScript
+            </p>
+        </div>
+
+        <!-- Main card -->
+        <div class="card shadow mx-auto" style="max-width: 650px;">
+
+            <div class="card-body p-4">
+
+                <h4 class="text-center mb-3">Stack Operations</h4>
+
+                <!-- Input field -->
+                <div class="input-group mb-3">
+
+                    <input type="number" id="elementInput" class="form-control" placeholder="Enter a number">
+
+                    <button class="btn btn-primary" onclick="pushElement()">
+                        Push
+                    </button>
+
+                </div>
+
+                <!-- Operation buttons -->
+                <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+
+                    <button class="btn btn-danger" onclick="popElement()">
+                        Pop
+                    </button>
+
+                    <button class="btn btn-success" onclick="peekElement()">
+                        Peek
+                    </button>
+
+                    <button class="btn btn-secondary" onclick="checkEmpty()">
+                        Is Empty?
+                    </button>
+
+                    <button class="btn btn-warning" onclick="clearStack()">
+                        Clear Stack
+                    </button>
+
+                </div>
+
+                <!-- Stack display -->
+                <h5 class="text-center">Stack (TOP → BOTTOM)</h5>
+
+                <div class="text-center fw-bold text-danger mb-2">
+                    TOP
+                </div>
+
+                <div id="stackDisplay" class="stack-box">
+                </div>
+
+                <!-- Stack information -->
+                <div class="row mt-4 text-center">
+
+                    <div class="col-6">
+                        <div class="border rounded p-3 bg-light">
+                            <h6>Stack Size</h6>
+                            <h3 id="stackSize" class="text-primary">0</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="border rounded p-3 bg-light">
+                            <h6>Top Element</h6>
+                            <h3 id="topElement" class="text-success">None</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Message -->
+                <div id="message" class="alert alert-info text-center mt-3 mb-0" role="status" aria-live="polite">
+                    Your stack is empty. Push an element to begin.
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        // Step 1: Create an empty stack
+        let stack = [];
+
+        // Step 2: Push an element into the stack
+        function pushElement() {
+
+            const input = document.getElementById("elementInput");
+
+            if (input.value.trim() === "") {
+                showMessage("Please enter a number.", "warning");
+                return;
+            }
+
+            const value = Number(input.value);
+
+            stack.push(value);
+
+            input.value = "";
+
+            updateStack();
+
+            showMessage(value + " was pushed onto the stack.", "success");
+        }
+
+        // Step 3: Remove the top element
+        function popElement() {
+
+            if (stack.length === 0) {
+                showMessage("Stack Underflow! The stack is empty.", "danger");
+                return;
+            }
+
+            const removedElement = stack.pop();
+
+            updateStack();
+
+            showMessage(removedElement + " was removed from the stack.", "success");
+        }
+
+        // Step 4: View the top element
+        function peekElement() {
+
+            if (stack.length === 0) {
+                showMessage("The stack is empty. Nothing to peek.", "warning");
+                return;
+            }
+
+            const top = stack[stack.length - 1];
+
+            showMessage("Top element is " + top + ".", "info");
+        }
+
+        // Step 5: Check whether the stack is empty
+        function checkEmpty() {
+
+            if (stack.length === 0) {
+                showMessage("Yes! The stack is empty.", "warning");
+            } else {
+                showMessage("No! The stack contains " + stack.length + " element(s).", "success");
+            }
+        }
+
+        // Step 6: Remove all elements
+        function clearStack() {
+
+            stack = [];
+
+            updateStack();
+
+            showMessage("All elements have been removed.", "info");
+        }
+
+        // Step 7: Update the webpage
+        function updateStack() {
+
+            const display = document.getElementById("stackDisplay");
+
+            display.innerHTML = "";
+
+            // Display the top element first
+            for (let i = stack.length - 1; i >= 0; i--) {
+
+                const item = document.createElement("div");
+
+                item.className = "stack-item";
+
+                item.textContent = stack[i];
+
+                if (i === stack.length - 1) {
+                    item.textContent += "  ← TOP";
+                }
+
+                display.appendChild(item);
+            }
+
+            // Update stack size
+            document.getElementById("stackSize").textContent = stack.length;
+
+            // Update top element
+            document.getElementById("topElement").textContent =
+                stack.length === 0 ? "None" : stack[stack.length - 1];
+        }
+
+        // Step 8: Display a message
+        function showMessage(text, type) {
+
+            const message = document.getElementById("message");
+
+            message.textContent = text;
+
+            message.className = "alert alert-" + type + " text-center mt-3 mb-0";
+        }
+
+        // Allow Enter to push an element
+        document.getElementById("elementInput").addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                pushElement();
+            }
+
+        });
+
+    </script>
+    ```
+
+</body>
+
+</html>

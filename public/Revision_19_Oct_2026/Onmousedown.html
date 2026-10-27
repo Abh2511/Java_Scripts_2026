@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mouseDown()
+        {
+            document.getElementById("result").innerHTML = "Mouse Button is Pressed";
+        }
+    </script>
+</head>
+<body>
+    <h2>Mouse Down Example</h2>
+    <button onmousedown="mouseDown()"> Press and Hold Me </button>
+    <p id="result"> Waiting for mouse button press ... </p>
+</body>
+</html>

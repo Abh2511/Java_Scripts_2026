@@ -1,0 +1,29 @@
+<script>
+    function findQuadrant(x,y)
+    {
+    if(x ==0 && y ==0)
+    {
+        document.write("The point is at Origin");
+    }
+
+    else if(x > 0 && y > 0)
+    {
+        document.write("The point is in Quadrant I");
+    }
+    else if(x < 0 && y > 0)
+    {
+        document.write("The point is is Quadrant II");
+    }
+    else if(x<0 && y<0){
+        document.write("The point is in Quadrant III");
+    }
+    else if(x>0 && y<0)
+    {
+        document.write("The Point is in Qudrant IV");
+    }
+    else{
+        document.write("The Point is on X-axis or Y-axis");
+    }
+    findQuadrant(5,3);
+}
+</script>

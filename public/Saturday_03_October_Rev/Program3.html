@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userDetails = {
+            UserName: "john",
+            Pin: 4535
+        }
+        function SubmitClick() {
+            var count = 0;
+            var pin = parseInt(document.getElementById("pin").value);
+            if (userDetails.Pin == pin) {
+                document.write("PIN Verified Successfully..");
+            } else {
+                count++;
+                do {
+                    document.write(`Invalid Pin - ${3 - count} Attempts left`);
+                } while (count <= 3)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Verify PIN</legend>
+        <div>
+            Your PIN : <input type="text" id="pin"> <button onclick="SubmitClick()">Submit</button>
+        </div>
+        <p aling="center" id="error"></p>
+    </fieldset>
+</body>
+
+</html>

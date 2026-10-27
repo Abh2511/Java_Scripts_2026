@@ -1,0 +1,54 @@
+<!-- <script>
+    switch(location.protocol)
+    {
+        case "http:":
+            document.write(`
+     Host Name : ${location.host}<br>
+     Protocol  : ${location.protocol}<br>
+     Port Number : ${location.port}<br>
+     Path : ${location.pathname}<br>
+     URL : ${location.href}
+    `);
+    break;
+    case "file:":
+        document.write(`
+        Protocol : ${location.protocol} - You are using File <br>
+        Path : ${location.pathname}<br>
+        URL : ${location.href}
+       ` );
+
+    }
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            var username = document.getElementById("UserName").value;
+            var password = document.getElementById("Password").value;
+            if(username=="john" && password=="john@11")
+        {
+            location.href = "www.google.com";
+        }
+        else{
+            location.href = "error.html";
+        }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h2>User Login</h2>
+        <dt>USer Name</dt>
+        <dd><input type="text" id="UserName"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id = "Password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function AddClick()
+        // {
+        //     var pic = document.createElement("img");
+        //     pic.width ="200";
+        //     pic.height = "200";
+        //     pic.border = "2";
+        //     pic.src = "../images/canara.jpg";
+        //     document.getElementById("container").appendChild(pic);
+        // }
+
+        
+
+        // function AddOption()
+        // {
+        //     var option = document.createElement("option");
+        //     option.text = "Delhi";
+        //     option.value = "Delhi";
+        //     document.querySelector("select").appendChild(option);
+        // }
+        var categories = ["All","Electronics","Footwear","Fashion"];
+        function AddOption(){
+            document.querySelector("select").innerHTML="";
+            for(var item of categories)
+        {
+            var option = document.createElement("option");
+            option.text = item;
+            option.value = item;
+            document.querySelector("select").appendChild(option);
+
+            var li = document.createElement("li");
+            li.innerHTML = item;
+            document.querySelector("ol").appendChild(li);
+        }
+        }
+
+
+  
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="AddClick()">Add Image</button> -->
+    <button onclick="AddOption()">Add Option</button>
+    <div id ="container">
+
+    </div>
+    <select>
+
+    </select>
+    <h2>Categories</h2>
+    <ol>
+
+    </ol>
+</body>
+</html>

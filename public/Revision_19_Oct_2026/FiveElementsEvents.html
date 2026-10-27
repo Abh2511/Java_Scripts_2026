@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px; 
+            height: 200px; 
+            background-color: lightblue;
+            border: 2px solid black; 
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function mouseOver(){
+            document.getElementById("result").innerHTML = "Mouse Over : Mouse entered the box...";
+            
+            document.getElementById("box").style.backgroundColor = "lightgreen";
+        }
+
+        function mouseDown(){
+            document.getElementById("result").innerHTML = "MouseDown: Mouse Button Pressed.";
+        }
+        function mouseUp()
+        {
+             document.getElementById("result").innerHTML = "Mouse Up: Mouse button released."; 
+        } 
+        function mouseMove(event)
+        {
+             document.getElementById("result").innerHTML = "Mouse Move: X = " + event.clientX + ", Y = " + event.clientY; 
+        }
+
+    </script>
+</head>
+<body>
+    <h2>JavaScript Mouse Events</h2>
+    <diV id="box"
+        onmouseover="mouseOver()"
+        onmouseout="mouseOut()"
+        onmousedown="mouseDown()"
+        onmouseup="mouseUp()"
+        onmousemove="mouseMove(event)">
+    
+    <h3>Move your mouse inside this box</h3>
+    <p> Try Moving ,pressing  and relasing your mouse</p>
+    </diV>
+    <p id="result">Event message will appear here.</p>
+</body>
+</html>

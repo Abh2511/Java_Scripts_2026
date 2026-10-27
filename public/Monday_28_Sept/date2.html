@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+<script>
+    function GetTime()
+    {
+        var now = new Date();
+        document.getElementById("time").innerHTML = now.toLocaleDateString();
+    }
+    function bodyload()
+    {
+        var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var months = ["Jan","Feb","Mar","April","May","June","July"];
+        var msg = document.getElementById("msg")
+        var now = new Date();
+        if(now.getHours()>=0 && now.getHours()<=12)
+        {
+            msg.innerHTML = "Good Morning";
+        } else if(now.getHours()>12 && now.getHours()<=17){S
+            msg.innerHTML = "Good Afternoon"
+        } else {
+            msg.innerHTML = "Good Evening";
+        }
+        now.setMonth("8")
+         document.getElementById("cal").innerHTML = `${weekdays[now.getDay()]} ${now.getDate()} ${months[now.getMonth()]},${now.getFullYear()}`;
+        //  document.getElementById("time").innerHTML = now.toLocaleDateString();
+        setInterval(GetTime,1000);
+  }
+</script>
+</head>
+<body class="container-fluid" onload = "bodyload()">
+    <div class="btn-toolbar bg-danger justify-content-between">
+        <div class="btn-group">
+            <butoon class="btn btn-danger">Home</butoon>
+             <butoon class="btn btn-danger">About</butoon>
+              <butoon class="btn btn-danger">Contact0</butoon>
+        </div>
+        <div class="btn-group">
+            <button class="btn-group">
+                <span id="msg"></span>
+            </button>
+
+        </div>
+        <div class="btn-group">
+            <button>
+                <span class="bi bi-calendar" id="cal"></span>
+            </button>
+
+        </div>
+        
+        <div class="btn-group">
+            <button>
+                <span class="bi bi-clock" id="time"></span>
+            </button>
+
+        </div>
+    </div>
+    
+</body>
+</html>

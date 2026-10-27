@@ -1,0 +1,68 @@
+<!-- <!-- <script>
+    for(var i=10; i>=1; i=i-1)
+{
+    document.write(i + "<br>")
+}
+
+</script> -->
+
+<!-- <script>
+    var names = [];
+    for (var i = 0; i <= 9; i++) {
+        var name = prompt(`Enter Name[${i + 1}]`);
+        names[i] = name;
+    }
+    document.write(names);
+</script> -->
+
+<!-- <script>
+    var menu = [
+        {Category : "Electronics",Products:["Televisions","Mobiles"]},
+        {Category: "Footwear", Products:["Boots","Casuals"]}
+    ];
+    function bodyload()
+    {
+        for(var i=0; i<menu.length; i++)
+    {
+        var li = document.createElement("li");
+        li.innerHTML = menu[i].Category;
+        for(var b=0; b<menu[i].Products.length;b++){
+            var ul = document.createElement("ul");
+            var ulLi = document.createElement("li");
+            ulLi.innerHTML = menu[i].Products[b];
+            ul.appendChild(ulLi);
+            li.appendChild(ul);
+            document.querySelector("ol").appendChild(li);
+        }
+    }
+
+    }
+</script>
+<body onload="bodyload()">
+    <ol>
+
+    </ol>
+
+</body>  -->
+
+<script>
+    
+let employees = ["Rahul", "Amit", "Abhirat", "Rohit"];
+
+let searchName = "Abhirat";
+let found = false;
+
+for (let i = 0; i < employees.length; i++) {
+
+    if (employees[i] === searchName) {
+        found = true;
+        break;
+    }
+}
+
+if (found) {
+    console.log("Employee Found");
+} else {
+    console.log("Employee Not Found");
+}
+</script>

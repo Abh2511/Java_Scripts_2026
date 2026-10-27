@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Promise Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+
+        .success {
+            background-color: green;
+        }
+
+        .failure {
+            background-color: red;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JavaScript Promise</h1>
+
+        <p>Click a button to test the Promise.</p>
+
+        <button class="success" onclick="checkPromise(true)">
+            Success
+        </button>
+
+        <button class="failure" onclick="checkPromise(false)">
+            Failure
+        </button>
+
+        <p id="result">Result will appear here.</p>
+
+    </div>
+
+    <script>
+
+        function checkPromise(isSuccess) {
+
+            document.getElementById("result").innerHTML =
+                "Processing...";
+
+            let myPromise = new Promise(function (resolve, reject) {
+
+                setTimeout(function () {
+
+                    if (isSuccess) {
+
+                        resolve("Promise Fulfilled! Task Successful.");
+
+                    } else {
+
+                        reject("Promise Rejected! Task Failed.");
+
+                    }
+
+                }, 2000);
+
+            });
+
+            myPromise
+
+                .then(function (result) {
+
+                    document.getElementById("result").innerHTML =
+                        result;
+
+                })
+
+                .catch(function (error) {
+
+                    document.getElementById("result").innerHTML =
+                        error;
+
+                })
+
+                .finally(function () {
+
+                    console.log("Promise processing completed.");
+
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

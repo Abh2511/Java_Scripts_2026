@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:void()">Home</a>
+</body>
+</html> -->
+
+<!-- <script>
+
+    var obj1 = new Array();
+    var obj2 = new Date();
+    var obj3 = new Map();
+    
+     document.write(`Obj1 is derived from Date ? ${obj1 instanceof Date}<br>`);
+     document.write(`Obj2 is derived from Array ? ${obj1 instanceof Array}<br>`);
+</script> -->
+
+
+<!-- 
+<script>
+
+    var product = {
+        "Name":"TV",
+        "Price":35000.33,
+        "Stock":true
+    }
+    for(var key in product){
+        document.write(key+ "<br>");
+    }
+
+</script> -->
+
+
+<script>
+
+    var product = {
+        "Name":"TV",
+        "Price":35000.33,
+        "Stock":true
+    }
+    Object.keys(product).map(function(key){
+        document.write(`<li>${key}</li>`);
+    })
+
+</script>

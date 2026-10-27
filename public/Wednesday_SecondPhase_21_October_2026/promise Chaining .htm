@@ -1,0 +1,17 @@
+<script>
+    Promise.resolve(50)
+
+    .then(function (marks) {
+
+        console.log("Original Marks:", marks);
+
+        return marks + 5;
+
+    })
+
+    .then(function (updatedMarks) {
+
+        console.log("Updated Marks:", updatedMarks);
+
+    });
+</script>

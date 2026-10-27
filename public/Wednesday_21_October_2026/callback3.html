@@ -1,0 +1,32 @@
+<script>
+ 
+var GetProducts = new Promise((resolve)=>
+{
+resolve('Gets all products');
+});
+var GetCategories = new Promise((resolve)=>
+{
+resolve('Get all Categories list');
+})
+var GetCart = new Promise((resolve)=>
+{
+resolve('Get Your Cart Details');
+})
+
+GetCategories.then((msg)=>{
+    document.write(msg);
+});
+GetProducts.then
+
+Promise.all([
+    GetProducts,
+    GetCategories,
+    GetCart
+]);
+Promise.race([
+     GetProducts,
+    GetCategories,
+    GetCart
+])
+
+</script>

@@ -1,0 +1,25 @@
+<!-- <script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    }
+)
+    .then(function(product){
+        for(var property in product){
+            document.write(`${property} <br>`);
+        }
+    })
+</script> -->
+
+<script>
+    fetch("http://fakestoreapi.com/products/1")
+    .then(function(response){
+        return response.json();
+    }
+)
+    .then(function(product){
+        for(var property in product){
+            document.write(`${property} :${typepof product[property]} <br>`);
+        }
+    })
+</script>

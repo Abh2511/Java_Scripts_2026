@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const container = document.getElementById("container");
+
+        const shadow = container.attachShadow({mode:"open"});
+
+        shadow.innerHTML = `
+        <style>
+            h2 {
+            color: blue;
+            } 
+            p {
+              color:green;
+              font-size: 18px;
+            }
+        </style>
+        <h2>Shadow DOM Heading</h2>
+
+        <p> This Paragraph is inside the Shadow root</p>
+
+        `;
+
+        console.log(shadow);
+
+        console.log(container.shadowRoot);
+    </script>
+</head>
+<body>
+    <h2> Normal DOM </h2>
+
+    <div id="container"></div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Root Example</title>
+</head>
+<body>
+
+    <h2>Normal DOM</h2>
+
+    <div id="container"></div>
+
+    <script>
+        // Step 1: Select the host element
+        const container = document.getElementById("container");
+
+        // Step 2: Create a Shadow Root
+        const shadow = container.attachShadow({ mode: "open" });
+
+        // Step 3: Add HTML inside the Shadow Root
+        shadow.innerHTML = `
+            <style>
+                h2 {
+                    color: blue;
+                }
+
+                p {
+                    color: green;
+                    font-size: 18px;
+                }
+            </style>
+
+            <h2>Shadow DOM Heading</h2>
+            <p>This paragraph is inside the Shadow Root.</p>
+        `;
+
+        // Step 4: Display the Shadow Root in the console
+        console.log(shadow);
+        console.log(container.shadowRoot);
+    </script>
+
+</body>
+</html>

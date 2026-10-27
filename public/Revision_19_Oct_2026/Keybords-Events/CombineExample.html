@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keyboard Events</title>
+
+    <script>
+        function KeyDownEvent() {
+            document.getElementById("result").textContent =
+                "keydown: You pressed a key.";
+        }
+
+        function KeyUpEvent() {
+            document.getElementById("result").textContent =
+                "keyup: You released a key.";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>JavaScript Keyboard Events</h2>
+
+    <label for="username">Enter your name:</label>
+
+    <input type="text" id="username" onkeydown="KeyDownEvent()" onkeyup="KeyUpEvent()">
+
+    <p id="result">Press a key inside the textbox.</p>
+
+</body>
+
+</html>

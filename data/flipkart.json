@@ -1,0 +1,17 @@
+{
+    "title": "vivo T1 44W (Midnight Galaxy, 128 GB) (4 GB RAM)",
+    "price": 14499,
+    "actualPrice": 17999,
+    "offers": [
+        "Bank Offer10% off on Bank of Baroda Credit Card EMI Transactions, up to ₹ 1,000 on orders of ₹ 15,000 and aboveT&C",
+        "Bank Offer10% off on IDFC FIRST Bank Credit Card EMI Transactions, up to ₹ 1,000 on orders of ₹ 15,000 and aboveT&C",
+        "Bank Offer10% off on IndusInd Bank Credit Card EMI Transactions, up to ₹ 10,000on orders of ₹17,500 and aboveT&C",
+        "Buy this Product and Get Extra ₹ 1500 Off on Bikes & ScootersT&C"
+    ],
+    "rating": {
+        "rate": 4.5,
+        "ratings": 96490,
+        "reviews": 5600
+    },
+    "photo": "../public/images/vivo.jpg"
+}

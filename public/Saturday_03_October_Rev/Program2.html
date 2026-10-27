@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var topics = ["Web Technologies","Front End","HTML","Sematics","Layout","Header"];
+        function bodyload()
+        {
+            for(var i=0; i<topics.length; i++)
+        {
+            var h = document.createElement(`h${i+1}`);
+            h.innerHTML = topics[i];
+            document.getElementById("container").appendChild(h);
+        }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>

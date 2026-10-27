@@ -89,13 +89,18 @@
       </script>
 </head>
 <body>
-      <dl>
+      <!-- <dl>
             <dt>User Name</dt>
             <dd><input type="text" onkeyup="ChangeCase()" size="6" id="UserName"></dd>
             <dd id ="UserError"></dd>
             <dt>IFSC Code</dt>
             <dd><input type="text" onkeyup="ChangeCase()" size="6" id="ifsc"></dd>            
-      </dl>
-      <button onclick="RegisterClick()">Register</button>
+      </dl> -->
+
+      <form>
+            UserName: <input type="text" required minlength="4" name="UserName">
+            <button>Submit</button>
+      </form>
+       <!-- <button onclick="RegisterClick()">Register</button> -->
 </body>
 </html>

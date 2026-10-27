@@ -1,0 +1,27 @@
+<script>
+    class SuperClass 
+    {
+        constructor()
+        {
+            document.write("Super Class Constructor<br>");
+        }
+        Print(){
+           document.write("Super Print");
+        }
+    }
+    class DerivedClass extends SuperClass
+    {
+        constructor()
+        {
+            super();
+            document.write("Derived Class Constructor<br>")
+        }
+        Print()
+        {
+            super.Print();
+            document.write("Derived Print");
+        }
+    }
+    let obj = new DerivedClass();
+    obj.Print();
+</script>

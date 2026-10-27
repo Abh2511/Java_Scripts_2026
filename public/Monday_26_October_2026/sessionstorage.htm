@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function saveName(){
+        var name = document.getElementById("username").value;
+
+        if(name.trim() === " "){
+            alert("Please enter your name");
+            return;
+        }
+        
+        sessionStorage.setItem("username",name);
+        alert("Name saved for this session !");
+    }
+
+    function showName(){
+        var name = sessionStorage.getItem("username");
+        document.getElementById("result").textContent = name === null ? "No name saved!" : "Welcome ," + name;
+    }
+
+    function deleteName(){
+        sessionStorage.removeItem("username");
+
+        document.getElementById("result").textContent = "Name deleted successfully"
+    }
+</script>
+<body>
+    <h2> Session Storage Demo</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="saveName()">Save Name</button>
+    <button onclick="showName()">Show Name</button>
+    <button onclick="deleteName()">Delete Name</button> 
+    <h3 id="result"></h3>
+</body>
+</html>

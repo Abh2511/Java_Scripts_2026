@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script>
+        var http = new XMLHttpRequest();
+        function HelpClick(){
+            http.open("GET","/data/help.txt");
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState==4){
+                    document.getElementById("container").innerHTML = http.responseText;
+
+                }
+            }
+        }
+        function ProductsClick(){
+            http.open("GET","/data/products.json");
+            http.send();
+            http.onreadystatechange = function(){
+                if(http.readyState==4){
+                   var data = JSON.parse(http.responseText);
+                   var tr = document.createElement("tr");
+                   var tdName = document.createElement("td");
+                   var tdPrice = document.createElement("td");
+
+                   tdName.innerHTML = item.Name;
+                   tdPrice.innerHTML = item.Price;
+
+                   tr.appendChild(tdName);
+                   tr.appendChild(tdPrice);
+
+                   document.querySelector("tbody").appendChild(tr);
+
+                }
+            }
+        }
+        function XMLClick(){
+            http.open("GET","/data/product.xml",true);
+            http.send()
+            http.onreadystatechange = function()
+            {
+                let xmldoc = http.responseXML;
+                for(var property in xmldoc){
+                    console.log(proerty);
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="HelpClick()">Help</button>
+    <button onclick="ProductsClick()">Products-JSON</button>
+    <button onclick="XMLClick()">XML Data</button>
+    <hr size="2" noshade>
+    <pre id="container"></pre>
+    <table border="1" width="300">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </thead>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<script>
+    function placeOrder() 
+    {
+        return new Promise(function(resolve,reject){
+            let paymentSuccessful = false;
+
+            setTimeout(function() {
+                if(paymentSuccessful){
+                    resolve("Mobile Ordered Successfully");
+                } else {
+                    reject("Payment Failed");
+                }
+            }, 2000); 
+
+        });
+    }
+
+    placeOrder()
+       .then(function(result){
+        console.log(result);
+       })
+       .catch(function(error){
+        console.log(error);
+       })
+       .finally(function(){
+        console.log("Order Process Finished");
+       });
+</script>

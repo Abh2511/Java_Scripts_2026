@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var http = new XMLHttpRequest()
+        function GetEMI()
+        {
+            http.open("GET","emi.html",true);
+            http.send();
+            http.onreadystatechange = function()
+            {
+                if(http.readyState==4)
+            {
+                document.getElementById("container").innerHTML = http.responseText;
+            }
+            }
+            
+        function GetNasa()
+        {
+            http.open("GET","emi.html",true);
+            http.send();
+            http.onreadystatechange = function()
+            {
+                if(http.readyState==4)
+            {
+                document.getElementById("container").innerHTML = http.responseText;
+            }
+            }
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <meta http-equiv="refresh" content="5">
+</head>
+<body class="container-fluid">
+    <button onclick="GetEMI()">EMI Calculator</button>
+    <button onclick="GetNasa()">Nasa Data</button>
+    <hr size="3" noshade color = "red">
+    <div id="container">
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- <script>
+    function VerifyValue(value)
+    {
+        document.write(`Your value ${value} is : ${typeof value}<br>`);
+
+    }
+    VerifyValue("Hello");
+    VerifyValue(30);
+    VerifyValue(true);
+    VerifyValue(["TV","Mobile"]);
+    VerifyValue({Name:"TV",Price:45000});
+    VerifyValue(function(){document.write("Welcome")});
+</script> -->
+
+
+<script>
+    function Product(id, name, price) {
+        if (id == undefined) {
+            document.write(`
+Name : ${name} <br>
+Price : ${price}
+`);
+        } else {
+            document.write(`
+Id : ${id} <br>
+Name : ${name} <br>
+Price : ${price}
+`);
+        }
+    }
+    Product("TV", 34000.33);
+</script>

@@ -1,0 +1,16 @@
+[
+    {
+        "Category": "Electronics",
+        "Products": [
+            "Televisions",
+            "Mobiles"
+        ]
+    },
+    {
+        "Category": "Footwear",
+        "Products": [
+            "Televisions",
+            "Boots"
+        ]
+    }
+]

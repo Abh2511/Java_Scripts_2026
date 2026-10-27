@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+
+<body>
+
+    <h2>Local Storage Demo</h2>
+
+    <input type="text" id="username" placeholder="Enter your name">
+
+    <button onclick="saveName()">Save Name</button>
+    <button onclick="showName()">Show Name</button>
+    <button onclick="deleteName()">Delete Name</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function saveName() {
+            const name = document.getElementById("username").value;
+
+            if (name.trim() === "") {
+                alert("Please enter your name!");
+                return;
+            }
+
+            localStorage.setItem("username", name);
+
+            alert("Name saved successfully!");
+        }
+
+        function showName() {
+            const name = localStorage.getItem("username");
+
+            document.getElementById("result").textContent =
+                name === null ? "No name saved!" : "Welcome, " + name;
+        }
+
+        function deleteName() {
+            localStorage.removeItem("username");
+
+            document.getElementById("result").textContent =
+                "Name deleted successfully!";
+        }
+    </script>
+
+</body>
+
+</html>

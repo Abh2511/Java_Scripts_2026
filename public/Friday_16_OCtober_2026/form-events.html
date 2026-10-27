@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PostClick(){
+            frmLogin.submit();
+        }
+        function VerifyName()
+        {
+            var username = document.getElementById("UserName").value;
+            if(username.length==4){
+                document.getElementById("password").focus();
+                document.getElementById("UserName").disabled=true;
+            }
+        }
+    </script>
+</head> 
+<body>
+    <form name="frmLogin" onsubmit="alert(`form will submit its data to server`)" onreset="alert(`Your form will reset-Data will erase`)">
+        User Name :
+        <input type="text" onkeyup="VerifyName()" id="UserName" name="UserName">
+        Password:
+        <input type="password" name="Password" id="password">
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+        <button type="button"onclick="PostClick()">Post</button>
+    </form>
+</body>
+</html>

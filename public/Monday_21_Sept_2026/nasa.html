@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        fetch("https://apod.nasa.gov/apod/astropix.html")
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <h2>Mars Rover Photos</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Phot Id</th>
+                <th>Preview</th>
+                <th>Camera</th>
+                <th>Rover</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+
+</html>

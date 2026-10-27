@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         async function Welcome()
+            {
+                let pro = new Promise((resolve,reject)=>{
+                    resolve(`Welcome to JavaScript`);
+                });
+                document.querySelector("p").innerHTML = await pro;
+            }
+        function btnClick()
+        {
+            Welcome();
+            
+           
+        }
+    </script>
+</head>
+<body>
+    <button onclick="btnClick()">Click</button>
+    <p></p>
+</body>
+</html>

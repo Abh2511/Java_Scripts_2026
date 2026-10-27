@@ -1,0 +1,20 @@
+<script>
+  function makeAnimalSound(animal) {
+    animal.makeSound();
+}
+
+const dog = {
+    makeSound: function() {
+        console.log("Barking");
+    }
+};
+
+const cat = {
+    makeSound: function() {
+        console.log("Meowing");
+    }
+};
+
+makeAnimalSound(dog);
+makeAnimalSound(cat);  
+</script>

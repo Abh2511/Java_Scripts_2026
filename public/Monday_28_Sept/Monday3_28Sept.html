@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var id=1;
+         function LoadProduct()
+         {
+            fetch(`http://fakestoreapi.com/products/${id}`
+                .then(function(res){
+                    return res.json();
+                })
+                .then(function(product)
+            {
+                document.getElementById("title").innerHTML = product.title;
+                document.getElementById("poster").scr = product.image;      
+            })
+        )
+         }
+         function bodyload()
+         {
+            LoadProduct();
+         }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="d-flex justify-content-center align-items-center" style="height: 400px";>
+       <div class="card w-50 p-2">
+          <div class="card-header">
+            <p id="title"></p>
+          </div> 
+          <div class="card-body">
+            <div class="row">
+                <div class="col-2 d-flex-column align-items-center">
+                    <button class="btn btn-primary">
+                        <span class="bi bi-chevron-left"></span>
+                    </button>
+                </div>
+                <div class="col-8">
+                    <img id="poster width=100%" height="300"> 
+                </div>
+                <div class="col-2">
+                     <button class="btn btn-primary">
+                        <span class="bi bi-chevron-right"></span>
+                    </button>
+                </div>
+            </div>
+
+          </div>
+       </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        HTML  Hidden Input
+        <h2>Edit User Details</h2>
+        <dl>
+            <input type="hidden" name="UserId" value="john_nit">
+            <dt>User Name</dt>
+            <dd><input type ="text" name="UserName"></dd>
+            <dt>Age</dt>
+            <dd><input type="number" name="Age"></dd>
+        </dl>
+        <button>Submit</button>
+    </form>
+</body>
+</html> -->
+
+
+<!-- Exampele of Symbo 
+<script>
+
+    var UserId = Symbol()
+
+    var userDetails = {
+        [UserId]:"john_nit",
+        UserName : "John",
+        Age: 22
+    }
+    for(var property in userDetails)
+    {
+        document.write(`${property}: ${userDetails[property]} <br> `);
+    }
+    document.write("User Id : " + userDetails[UserId] + "<br>");
+    document.write(typeof UserId);
+</script> -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+       <!-- HTML  Hidden Input -->
+        <h2>Edit User Details</h2>
+        <dl>
+            <dt>User Id</dt>
+            <dd><input type="text" disabled name="UserId" value="abhirat_nit"></dd>
+            <dt>User Name</dt>
+            <dd><input type ="text" name="UserName"></dd>
+            <dt>Age</dt>
+            <dd><input type="number" name="Age"></dd>
+        </dl>
+        <button>Submit</button>
+    </form>
+</body> 
+</html> 

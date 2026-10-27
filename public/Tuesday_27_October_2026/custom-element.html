@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class MyDialog extends HTMLElement
+        {
+            constructor(){
+                super();
+                this.caption = "some caption";
+                
+            }
+            static get observedAttributes(){
+
+                return ['caption'];
+            }
+            setAttributes(property,oldValue,newValue)
+            {
+                if(oldValue==newValue)
+            {
+                return;
+            }
+                this [property] = newValue;
+            }   
+            connectedCallBack(){
+                let shadow = this.shadowRoot({mode: 'open'});
+                shadow.innerHTML = ` 
+                    <h2> ${caption}</h2>
+                `;
+            }
+        }
+        
+        customElements.define('my-dialog', MyDialog);
+    </script>
+</head>
+<body>
+    <h2>Custom Elements</h2>
+    <my-dialog caption="MyDialog"></my-dialog>
+    <input type="Date">
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "Name":"Samsung TV",
+        "Price":45000.44,
+        "Rating": {"Rate":4.3,"Count":5000}
+    },
+    {
+        "Name":"Nike Casuals",
+        "Price":5700.33,
+        "Rating": {"Rate":3.6,"Count":3200}
+    },
+    {
+        "Name":"Nike Sports",
+        "Price":2700.33,
+        "Rating": {"Rate":4.5,"Count":3200}
+    }
+
+]

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mouseUp()
+        {
+            document.getElementById("result").innerHTML = "Mouse Button released";
+        }
+    </script>
+</head>
+<body>
+    <h2>Mouse Up Example</h2>
+    <button onmouseup="mouseUp()">Press and Release</button>
+    <p id="result">Waiting for mouse button release</p>
+</body>
+</html>

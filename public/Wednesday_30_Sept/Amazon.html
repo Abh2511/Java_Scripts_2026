@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Login</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+         var flag = " ";
+         function ContinueClick()
+         {
+            var userid = document.getElementById("txtUserId").value;
+            var userError = document.getElementById("userError");
+            var userContainer = document.getElementById("userContainer");
+            var passwordContainer = document.getElementById("passwordContainer");
+            
+
+            function ToggleContainers(){
+                
+            }
+
+            fetch("../data/user.json")
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(user){
+                if(userid==user.Email){
+                    flag = `Login Success and Verfication code sent to your register email ${userid}`;
+                    userContainer.style.display = "none";
+                    passwordContainer.style.display = "block";
+                } else if(userid==user.Mobile){
+                    flag = `Login Success and OTP sent to registerd mobile ${userid}`;
+                } else {
+                    userError.innerHTML = `${userid} doesn't exist`;
+                }
+            })
+         }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center" style="height:500px">
+        <div class="w-25">
+            <h2>SignIn</h2>
+            <div id="userContainer">
+               <div class="mb-3">
+                 <label class="form-label fw-bold">Email or Mobile Phone Number</label>
+                <div>
+                    <input type="text" id="txtUserId" class="form-control">
+                    <div class="text-danger" id="userError"></div>
+                </div>
+            </div>
+            </div>
+            <div>
+                <button class="btn btn-warning w-100">Continue</button>
+            </div>      
+            </div>
+            <div id="passwordContainer" style="display:none">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Password</label>
+                    <div>
+                        <input type="password" id="txtPws" class="form-control">
+                        <div id="pwdError" class="text-danger"></div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-warning w-100">Login</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

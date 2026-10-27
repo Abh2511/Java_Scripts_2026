@@ -1,0 +1,21 @@
+<!-- <sctipt>
+    var product = {
+        " Name ":"Samsung TV",
+        " Price ":45000.44,
+        " Manufactured ":"04-03-2024"
+    }
+</sctipt> -->
+
+<script>
+    var product = {
+        "Name":"Samsung TV" ,
+        "Price": 45000.44,
+        "Manifactured":new Date()
+    }
+    document.write(`
+            Name : ${product.Name}<br>
+            Price : ${product.Price}<br>
+            Mfd :  ${product.Manifactured.getDate()}
+
+    `);
+</script>

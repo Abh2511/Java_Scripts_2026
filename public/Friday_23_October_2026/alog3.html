@@ -1,0 +1,20 @@
+<script>
+    function PrintCategoies(){
+        fetch("http://www.google.com")
+        .then(res=>products.json())
+        .then(data=>{
+            for(var item of data){
+                document.write(item + "<br>");
+            }
+
+        })
+    }
+    let startProfiling =0;
+    let endProfiling =0;
+        startProfiling = performance.now();
+        PrintCategoies();
+        endProfiling = performance.now();
+        let totalProfileTime = endProfiling - startProfiling;
+        document.write("Total Time : " + totalProfileTime);
+    
+</script>

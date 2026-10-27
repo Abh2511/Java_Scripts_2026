@@ -1,0 +1,17 @@
+<script>
+    function FetchData(url, success, failure) {
+        if (url == "hhtp://wwww.google.com") {
+            success('Fetched Data Successfully....');
+        } else {
+            failure('Error:Unable to fetch data');
+        }
+    }
+    FetchData(prompt("Enter URL"),
+        (msg) => {
+            document.write(`Success: ${msg}`);
+        },
+        (msg) => {
+            document.write(`Failure: ${msg}`)
+        }
+    )
+</script>

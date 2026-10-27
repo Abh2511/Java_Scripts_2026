@@ -1,0 +1,45 @@
+<script>
+    class HDFC_Bank_Version1
+    {
+        Personal = "Personal Banking Services";
+        NRI = "NRI Banking Services";
+        Print(){
+            document.write(`${this.Personal}<br>${this.NRI}<br>`);
+        }
+    }
+    class HDFC_Bank_Version2
+    {
+        Loans = "Car and Personal Loans";
+        Print(){
+            let obj = new HDFC_Bank_Version1();
+            obj.Print();
+            document.write(`${this.Loans}`);
+        }
+    }
+    function InstallClick(){
+        var ver = document.querySelector("select").value;
+        switch(ver)
+        {
+            case "ver1":
+            let obj1 = new HDFC_Bank_Version1();
+            obj1.Print();
+            break;
+            case "ver1":
+            let obj2 = new HDFC_Bank_Version2();
+            obj1.Print();
+            break;
+            default:
+            document.write("Please Select a Version");
+             break;
+        }
+    }
+</script>
+<body>
+   <h1>Install Bank App</h1>
+   <select>
+    <option>Choose Version</option>
+    <option value="ver1">Version-1</option>
+    <option value="ver2">Version-2</option>
+   </select>
+   <button onclick="InstallClick()">Install</button>
+</body>
